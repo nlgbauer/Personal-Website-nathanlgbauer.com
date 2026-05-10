@@ -1443,3 +1443,93 @@ img { max-width: 100%; display: block; }
         padding: 64px 0 88px;
     }
 }
+
+
+/* ============================================================
+   PRESS PAGE — FULL LISTING
+============================================================ */
+
+.press-pg-header {
+    padding: calc(var(--nav-h) + 88px) 0 80px;
+    border-bottom: 1px solid var(--border);
+}
+
+.press-pg-header h1 {
+    font-family: var(--serif);
+    font-size: clamp(64px, 9vw, 120px);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 28px;
+}
+
+.press-pg-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 24px);
+    color: var(--accent);
+}
+
+.press-pg-intro {
+    padding: 56px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.press-pg-intro p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(17px, 1.8vw, 21px);
+    color: var(--text-muted);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.55;
+}
+
+.press-pg-section {
+    padding: 64px 0 100px;
+}
+
+.press-date {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.press-headline a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.press-headline a:hover {
+    color: var(--accent);
+}
+
+.press-card--wide {
+    grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+    .press-pg-header {
+        padding: calc(var(--nav-h) + 64px) 0 64px;
+    }
+
+    .press-card--wide {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .press-pg-header {
+        padding: calc(var(--nav-h) + 48px) 0 52px;
+    }
+
+    .press-pg-section {
+        padding: 48px 0 72px;
+    }
+}
