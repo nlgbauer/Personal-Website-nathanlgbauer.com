@@ -1188,3 +1188,258 @@ img { max-width: 100%; display: block; }
         padding: 72px 0 88px;
     }
 }
+
+
+/* ============================================================
+   WORK PAGE — TIMELINE LAYOUT
+============================================================ */
+
+.work-pg-header {
+    padding: calc(var(--nav-h) + 88px) 0 80px;
+    border-bottom: 1px solid var(--border);
+}
+
+.work-pg-header h1 {
+    font-family: var(--serif);
+    font-size: clamp(64px, 9vw, 120px);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 28px;
+}
+
+.work-pg-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 24px);
+    color: var(--accent);
+}
+
+.work-intro {
+    padding: 56px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.work-intro p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(17px, 1.8vw, 21px);
+    color: var(--text-muted);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.55;
+}
+
+.work-timeline-wrap {
+    padding: 0;
+}
+
+.work-entry {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.work-co-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 44px;
+}
+
+.work-co-info { }
+
+.work-co-name {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.work-co-location {
+    display: block;
+    font-size: 13px;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+}
+
+.work-co-tenure {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 8px;
+}
+
+.work-roles-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.work-role {
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+}
+
+.work-role:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.work-role-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.work-role-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.work-role-dates {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.work-role-scope {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 680px;
+}
+
+.work-role-prose {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-body);
+    max-width: 720px;
+}
+
+/* Education */
+.work-education {
+    padding: 72px 0 80px;
+    border-top: 1px solid var(--border);
+}
+
+.work-edu-heading {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 56px;
+}
+
+.work-edu-item {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+}
+
+.work-edu-item:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.work-edu-detail {
+    font-size: 13px;
+    color: var(--text-light);
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+}
+
+/* Closing */
+.work-close {
+    padding: 88px 0 120px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.work-close-text {
+    font-family: var(--serif);
+    font-size: clamp(22px, 2.8vw, 36px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+    .work-pg-header {
+        padding: calc(var(--nav-h) + 64px) 0 64px;
+    }
+
+    .work-entry {
+        padding: 56px 0;
+    }
+
+    .work-co-header {
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 32px;
+    }
+
+    .work-co-tenure {
+        padding-top: 0;
+    }
+
+    .work-education {
+        padding: 56px 0 64px;
+    }
+
+    .work-edu-heading {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .work-pg-header {
+        padding: calc(var(--nav-h) + 48px) 0 52px;
+    }
+
+    .work-entry {
+        padding: 48px 0;
+    }
+
+    .work-role {
+        padding: 28px 0;
+    }
+
+    .work-role-meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .work-education {
+        padding: 48px 0 56px;
+    }
+
+    .work-close {
+        padding: 64px 0 88px;
+    }
+}
