@@ -1599,3 +1599,17 @@ img { max-width: 100%; display: block; }
     font-weight: 700;
     color: #005EB8;
 }
+
+.press-logo-wrap {
+    margin-bottom: 20px;
+}
+
+.press-logo-img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+.press-logo-wrap .press-brand {
+    margin-bottom: 0;
+}
