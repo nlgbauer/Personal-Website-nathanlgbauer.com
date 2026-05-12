@@ -606,17 +606,18 @@ img { max-width: 100%; display: block; }
     background: var(--white);
     padding: 40px;
     border: 1px solid var(--border);
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     flex-direction: column;
 }
 
-.press-card:hover { border-color: var(--accent); }
+.press-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(28, 28, 30, 0.09);
+}
 
 .press-card-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 20px;
 }
 
@@ -1532,4 +1533,69 @@ img { max-width: 100%; display: block; }
     .press-pg-section {
         padding: 48px 0 72px;
     }
+}
+
+
+/* ============================================================
+   PRESS BRAND LOGO TREATMENTS
+============================================================ */
+
+.press-brand {
+    display: block;
+    font-family: var(--sans);
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: 0;
+}
+
+.press-brand--cnbc {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #E0131A;
+    letter-spacing: 0.04em;
+}
+
+.press-brand--adweek {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 0.03em;
+}
+
+.press-brand--adexchanger {
+    font-weight: 700;
+    color: #1A1A1A;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+    text-decoration-color: rgba(26, 26, 26, 0.3);
+}
+
+.press-brand--marketing-dive {
+    font-weight: 700;
+    color: #0066CC;
+}
+
+.press-brand--ad-age {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-style: italic;
+    color: #CC0000;
+}
+
+.press-brand--digiday {
+    font-family: var(--sans);
+    font-weight: 700;
+    color: #000000;
+}
+
+.press-brand--walmart-connect {
+    font-weight: 700;
+    color: #0071CE;
+}
+
+.press-brand--gallup {
+    font-weight: 700;
+    color: #005EB8;
 }
