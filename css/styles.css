@@ -483,6 +483,26 @@ img { max-width: 100%; display: block; }
     color: var(--text-light);
 }
 
+.footer-attribution {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 20px;
+    letter-spacing: 0.02em;
+}
+
+.footer-attribution a {
+    color: var(--text-light);
+    text-decoration: underline;
+    text-decoration-color: rgba(154, 154, 154, 0.35);
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+}
+
+.footer-attribution a:hover {
+    color: var(--text-muted);
+}
+
 
 /* ============================================================
    PAGE HERO (interior pages)
