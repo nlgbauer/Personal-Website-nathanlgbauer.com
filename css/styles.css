@@ -186,19 +186,6 @@ img { max-width: 100%; display: block; }
 
 .nav.scrolled .nav-hamburger span { background: var(--text); }
 
-.nav-vibe {
-    font-family: var(--sans);
-    font-size: 11px;
-    font-style: italic;
-    color: var(--text-light);
-    letter-spacing: 0.03em;
-    white-space: nowrap;
-}
-
-@media (max-width: 900px) {
-    .nav-vibe { display: none; }
-}
-
 
 /* ============================================================
    HERO
