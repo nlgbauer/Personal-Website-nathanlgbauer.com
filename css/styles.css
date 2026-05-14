@@ -1633,3 +1633,165 @@ img { max-width: 100%; display: block; }
 .press-logo-wrap .press-brand {
     margin-bottom: 0;
 }
+
+
+/* ============================================================
+   HOMEPAGE — ANIMATIONS & ENHANCEMENTS
+============================================================ */
+
+/* 1. Name fade-up animation */
+@keyframes nameRise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-name-word {
+    display: inline-block;
+    opacity: 0;
+    animation: nameRise 0.8s ease-out forwards;
+}
+
+.hero-name-word--delay {
+    animation-delay: 0.4s;
+}
+
+/* 6. Divider draws left-to-right after name completes */
+@keyframes drawRule {
+    from { width: 0; opacity: 0; }
+    to   { width: 56px; opacity: 1; }
+}
+
+.hero-rule {
+    animation: drawRule 0.6s ease-out 1.2s both;
+}
+
+/* 5. Hero photo scale on hover */
+.hero-photo img {
+    transition: transform 0.4s ease;
+}
+
+.hero-photo:hover img {
+    transform: scale(1.03);
+}
+
+/* 2. Stats strip */
+.stats-strip {
+    border-top: 1px solid rgba(201, 185, 154, 0.28);
+    border-bottom: 1px solid rgba(201, 185, 154, 0.28);
+    padding: 44px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 0 24px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-family: var(--serif);
+    font-size: clamp(30px, 3.5vw, 44px);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #2C2C2C;
+    line-height: 1.5;
+}
+
+/* 3. Press logos on homepage — grayscale → color on hover */
+.press-logo-home {
+    width: 100px;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: filter 0.35s ease, opacity 0.35s ease;
+}
+
+.press-logo-item:hover .press-logo-home {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* 7. Custom cursor dot */
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: #C9B99A;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s ease, height 0.25s ease;
+    will-change: left, top;
+    opacity: 0;
+}
+
+.cursor-dot--large {
+    width: 16px;
+    height: 16px;
+}
+
+@media (pointer: coarse) {
+    .cursor-dot { display: none; }
+}
+
+/* 8. Scroll progress bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--accent);
+    z-index: 300;
+    pointer-events: none;
+}
+
+/* Responsive — stats strip */
+@media (max-width: 900px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 0;
+    }
+    .stat-item {
+        border-right: none;
+    }
+    .stat-item:nth-child(odd) {
+        border-right: 1px solid var(--border);
+    }
+}
+
+@media (max-width: 640px) {
+    .stats-strip { padding: 28px 0; }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .hero-name-word { animation: none; opacity: 1; }
+    .hero-rule      { animation: none; }
+    .hero-photo img { transition: none; }
+}

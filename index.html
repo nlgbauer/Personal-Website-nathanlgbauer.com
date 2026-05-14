@@ -11,6 +11,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* 4. Paper/linen texture overlay — 3.5% opacity, felt not seen */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n' x='0' y='0'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+            background-size: 200px 200px;
+        }
+        /* 7. Hide default cursor on pointer devices for custom cursor */
+        @media (pointer: fine) {
+            * { cursor: none !important; }
+        }
+    </style>
 </head>
 <body>
 
@@ -52,7 +69,7 @@
             <!-- Content -->
             <div class="hero-content">
                 <span class="hero-eyebrow">Group Product Manager &nbsp;·&nbsp; Walmart Connect &nbsp;·&nbsp; San Francisco</span>
-                <h1 class="hero-name">Nathan<br>Bauer</h1>
+                <h1 class="hero-name"><span class="hero-name-word">Nathan</span><br><span class="hero-name-word hero-name-word--delay">Bauer</span></h1>
                 <div class="hero-rule" aria-hidden="true"></div>
                 <p class="hero-tagline">Building at the intersection of retail, media, and AI, with a scale that makes an impact.</p>
                 <div class="hero-cta">
@@ -61,6 +78,33 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+
+    <!-- ======================================================
+         STATS STRIP
+    ====================================================== -->
+    <section class="stats-strip fade-in" aria-label="Career highlights">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Years at Walmart Connect</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Major Platform Launches</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Continents</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Years in Industry</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -108,11 +152,21 @@
             </div>
 
             <div class="press-logos" role="list" aria-label="Press outlets">
-                <a href="press.html" class="press-logo-item" role="listitem">CNBC</a>
-                <a href="press.html" class="press-logo-item" role="listitem">Adweek</a>
-                <a href="press.html" class="press-logo-item" role="listitem">Digiday</a>
-                <a href="press.html" class="press-logo-item" role="listitem">Walmart Connect</a>
-                <a href="press.html" class="press-logo-item" role="listitem">Gallup</a>
+                <a href="press.html" class="press-logo-item" role="listitem">
+                    <img src="images/logos/cnbc.png" alt="CNBC" class="press-logo-home">
+                </a>
+                <a href="press.html" class="press-logo-item" role="listitem">
+                    <img src="images/logos/AdWeek.png" alt="Adweek" class="press-logo-home">
+                </a>
+                <a href="press.html" class="press-logo-item" role="listitem">
+                    <img src="images/logos/digiday.png" alt="Digiday" class="press-logo-home">
+                </a>
+                <a href="press.html" class="press-logo-item" role="listitem">
+                    <img src="images/logos/walmartconnect.png" alt="Walmart Connect" class="press-logo-home">
+                </a>
+                <a href="press.html" class="press-logo-item" role="listitem">
+                    <img src="images/logos/Gallup.png" alt="Gallup" class="press-logo-home">
+                </a>
             </div>
 
         </div>
@@ -138,5 +192,56 @@
 
 
     <script src="js/main.js"></script>
+    <script>
+    (function () {
+        'use strict';
+
+        // 8. Scroll progress bar
+        var bar = document.createElement('div');
+        bar.className = 'scroll-progress';
+        bar.setAttribute('aria-hidden', 'true');
+        document.body.insertBefore(bar, document.body.firstChild);
+
+        window.addEventListener('scroll', function () {
+            var scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+            var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+        }, { passive: true });
+
+        // 7. Custom cursor — pointer devices only, not touch
+        if (!window.matchMedia('(pointer: fine)').matches) return;
+
+        var dot = document.createElement('div');
+        dot.className = 'cursor-dot';
+        document.body.appendChild(dot);
+
+        var mouseX = 0, mouseY = 0, curX = 0, curY = 0;
+
+        document.addEventListener('mousemove', function (e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.opacity = '1';
+        });
+
+        document.addEventListener('mouseleave', function () {
+            dot.style.opacity = '0';
+        });
+
+        // Lerp loop for the slight lag
+        (function tick() {
+            curX += (mouseX - curX) * 0.15;
+            curY += (mouseY - curY) * 0.15;
+            dot.style.left = curX + 'px';
+            dot.style.top  = curY + 'px';
+            requestAnimationFrame(tick);
+        }());
+
+        // Scale up on links and buttons
+        document.querySelectorAll('a, button').forEach(function (el) {
+            el.addEventListener('mouseenter', function () { dot.classList.add('cursor-dot--large'); });
+            el.addEventListener('mouseleave', function () { dot.classList.remove('cursor-dot--large'); });
+        });
+    }());
+    </script>
 </body>
 </html>
