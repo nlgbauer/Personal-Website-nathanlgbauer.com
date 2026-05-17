@@ -1733,31 +1733,6 @@ img { max-width: 100%; display: block; }
     opacity: 1;
 }
 
-/* 7. Custom cursor dot */
-.cursor-dot {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    background: #C9B99A;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: width 0.25s ease, height 0.25s ease;
-    will-change: left, top;
-    opacity: 0;
-}
-
-.cursor-dot--large {
-    width: 16px;
-    height: 16px;
-}
-
-@media (pointer: coarse) {
-    .cursor-dot { display: none; }
-}
 
 /* 8. Scroll progress bar */
 .scroll-progress {

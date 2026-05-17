@@ -23,10 +23,6 @@
             background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n' x='0' y='0'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
             background-size: 200px 200px;
         }
-        /* 7. Hide default cursor on pointer devices for custom cursor */
-        @media (pointer: fine) {
-            * { cursor: none !important; }
-        }
     </style>
 </head>
 <body>
@@ -68,10 +64,10 @@
 
             <!-- Content -->
             <div class="hero-content">
-                <span class="hero-eyebrow">Group Product Manager &nbsp;·&nbsp; Walmart Connect &nbsp;·&nbsp; San Francisco</span>
+                <span class="hero-eyebrow">Product &nbsp;·&nbsp; Partnerships &nbsp;·&nbsp; San Francisco</span>
                 <h1 class="hero-name"><span class="hero-name-word">Nathan</span><br><span class="hero-name-word hero-name-word--delay">Bauer</span></h1>
                 <div class="hero-rule" aria-hidden="true"></div>
-                <p class="hero-tagline">Building at the intersection of retail, media, and AI, with a scale that makes an impact.</p>
+                <p class="hero-tagline">Product and Partnerships leader. Driving through collaboration and building with AI.</p>
                 <div class="hero-cta">
                     <a href="work.html" class="btn-primary">View My Work</a>
                     <a href="contact.html" class="btn-ghost">Get In Touch</a>
@@ -89,8 +85,8 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-number">7</span>
-                    <span class="stat-label">Years at Walmart Connect</span>
+                    <span class="stat-number">$0 to $XXXm</span>
+                    <span class="stat-label">Scale</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">5</span>
@@ -119,7 +115,7 @@
 
                 <div class="intro-block">
                     <span class="intro-block-label">Currently</span>
-                    <p>Platform Product lead for offsite partnerships and platform integrations at Walmart Connect, one of the world's largest retail media networks. Launched and built the Walmart DSP, social platform partnerships, and agentic AI tooling from the ground up.</p>
+                    <p>Advising and building what's next in AI-powered product.</p>
                 </div>
 
                 <div class="intro-block">
@@ -208,39 +204,6 @@
             bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
         }, { passive: true });
 
-        // 7. Custom cursor — pointer devices only, not touch
-        if (!window.matchMedia('(pointer: fine)').matches) return;
-
-        var dot = document.createElement('div');
-        dot.className = 'cursor-dot';
-        document.body.appendChild(dot);
-
-        var mouseX = 0, mouseY = 0, curX = 0, curY = 0;
-
-        document.addEventListener('mousemove', function (e) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            dot.style.opacity = '1';
-        });
-
-        document.addEventListener('mouseleave', function () {
-            dot.style.opacity = '0';
-        });
-
-        // Lerp loop for the slight lag
-        (function tick() {
-            curX += (mouseX - curX) * 0.15;
-            curY += (mouseY - curY) * 0.15;
-            dot.style.left = curX + 'px';
-            dot.style.top  = curY + 'px';
-            requestAnimationFrame(tick);
-        }());
-
-        // Scale up on links and buttons
-        document.querySelectorAll('a, button').forEach(function (el) {
-            el.addEventListener('mouseenter', function () { dot.classList.add('cursor-dot--large'); });
-            el.addEventListener('mouseleave', function () { dot.classList.remove('cursor-dot--large'); });
-        });
     }());
     </script>
 </body>
