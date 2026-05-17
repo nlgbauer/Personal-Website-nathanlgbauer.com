@@ -24,19 +24,26 @@
         .about-pg-header {
             padding-bottom: 64px;
         }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .about-pg-block--seamless {
+            border-bottom: none;
+        }
         .about-pg-photo-block {
-            padding: 32px 0 48px;
+            padding: 0 0 48px;
             border-bottom: none;
         }
         .about-pg-photo-figure {
-            margin: 0 auto;
-            max-width: 600px;
+            margin: 0;
         }
         .about-pg-photo-img {
             width: 100%;
-            height: 400px;
+            height: 600px;
             object-fit: cover;
-            object-position: center top;
+            object-position: center center;
             display: block;
         }
         .about-pg-photo-fig-caption {
@@ -78,7 +85,7 @@
          PAGE HEADER
     ====================================================== -->
     <header class="about-pg-header">
-        <div class="container">
+        <div class="about-content">
             <p class="about-pg-main">Product. Partnerships. Collaboratively driven with a strong point of view.</p>
         </div>
     </header>
@@ -88,7 +95,7 @@
          OPENING SECTION
     ====================================================== -->
     <section class="about-pg-block fade-in" aria-label="Background">
-        <div class="container">
+        <div class="about-content">
             <span class="about-pg-label">Background</span>
             <div class="about-pg-prose">
                 <p>I grew up in Leawood, Kansas with an entrepreneurial streak early. At 15, I was running a small business and testing ads to find customers. Even then, I understood that data-informed decisions beat gut instinct. That instinct has driven everything since.</p>
@@ -106,8 +113,8 @@
     <!-- ======================================================
          WALMART CONNECT SECTION
     ====================================================== -->
-    <section class="about-pg-block fade-in" aria-label="Walmart Connect">
-        <div class="container">
+    <section class="about-pg-block about-pg-block--seamless fade-in" aria-label="Walmart Connect">
+        <div class="about-content">
             <span class="about-pg-label">Walmart Connect</span>
             <h2 class="about-pg-headline">Building Walmart's media platform from the ground up.</h2>
             <div class="about-pg-prose">
@@ -122,7 +129,7 @@
          PHOTO PLACEHOLDER 2
     ====================================================== -->
     <div class="about-pg-photo-block fade-in">
-        <div class="container">
+        <div class="about-content">
             <figure class="about-pg-photo-figure">
                 <img src="nathan-bauer-mont-blanc.jpeg" alt="Nathan Bauer at the Mont Blanc summit, 2025" class="about-pg-photo-img">
                 <figcaption class="about-pg-photo-fig-caption">Mont Blanc Summit, 2025</figcaption>
