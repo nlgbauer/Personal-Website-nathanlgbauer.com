@@ -11,6 +11,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .work-pg-header {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .work-intro {
+            text-align: left;
+            border-bottom: none;
+            padding: 40px 0 56px;
+        }
+        .work-pg-main {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            font-weight: 700;
+            font-style: normal;
+            color: #1C1C1E;
+            margin-bottom: 8px;
+        }
+        .work-intro-sub {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 17px;
+            color: var(--text-muted);
+            margin: 0;
+            max-width: none;
+            text-align: left;
+        }
+        .work-co-logo {
+            width: 140px;
+            height: auto;
+            display: block;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: filter 0.35s ease, opacity 0.35s ease;
+        }
+        .work-co-header:hover .work-co-logo {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
@@ -42,10 +82,7 @@
          PAGE HEADER
     ====================================================== -->
     <header class="work-pg-header">
-        <div class="container">
-            <h1>Work</h1>
-            <p class="work-pg-sub">The career, in full.</p>
-        </div>
+        <div class="container"></div>
     </header>
 
 
@@ -54,7 +91,8 @@
     ====================================================== -->
     <div class="work-intro">
         <div class="container">
-            <p>Fifteen years across research, strategy, finance, and product. Here is the full picture.</p>
+            <h1 class="work-pg-main">Fifteen years across research, strategy, finance, and product.</h1>
+            <p class="work-intro-sub">Here is the full picture.</p>
         </div>
     </div>
 
@@ -70,7 +108,7 @@
             <div class="work-entry fade-in">
                 <div class="work-co-header">
                     <div class="work-co-info">
-                        <h2 class="work-co-name">Walmart Connect</h2>
+                        <img src="work-images/walmart-connect-logo.png" alt="Walmart Connect" class="work-co-logo">
                         <span class="work-co-location">San Francisco</span>
                     </div>
                     <span class="work-co-tenure">2019 – Present</span>
@@ -122,7 +160,7 @@
             <div class="work-entry fade-in">
                 <div class="work-co-header">
                     <div class="work-co-info">
-                        <h2 class="work-co-name">Mortenson</h2>
+                        <img src="work-images/Mortenson-logo.png" alt="Mortenson" class="work-co-logo">
                         <span class="work-co-location">Minneapolis</span>
                     </div>
                     <span class="work-co-tenure">2018 – 2019</span>
@@ -143,7 +181,7 @@
             <div class="work-entry fade-in">
                 <div class="work-co-header">
                     <div class="work-co-info">
-                        <h2 class="work-co-name">Rakuten</h2>
+                        <img src="work-images/rakuten.png" alt="Rakuten" class="work-co-logo">
                         <span class="work-co-location">Tokyo and San Francisco</span>
                     </div>
                     <span class="work-co-tenure">2017</span>
@@ -160,32 +198,11 @@
             </div>
 
 
-            <!-- McCARTHY CAPITAL -->
-            <div class="work-entry fade-in">
-                <div class="work-co-header">
-                    <div class="work-co-info">
-                        <h2 class="work-co-name">McCarthy Capital</h2>
-                        <span class="work-co-location">Omaha</span>
-                    </div>
-                    <span class="work-co-tenure">2017</span>
-                </div>
-                <div class="work-roles-list">
-                    <div class="work-role">
-                        <div class="work-role-meta">
-                            <span class="work-role-title">Summer Associate</span>
-                        </div>
-                        <p class="work-role-scope">Internship with a $1B growth equity firm focused on early-stage technology companies.</p>
-                        <p class="work-role-prose">Modeled investment cash flow scenarios for prospective venture deals. Performed discounted cash flow analyses, comparable transaction valuations, and market and legal due diligence on prospective portfolio companies.</p>
-                    </div>
-                </div>
-            </div>
-
-
             <!-- GALLUP -->
             <div class="work-entry fade-in">
                 <div class="work-co-header">
                     <div class="work-co-info">
-                        <h2 class="work-co-name">Gallup, Inc.</h2>
+                        <img src="work-images/gallup-logo.png" alt="Gallup" class="work-co-logo">
                         <span class="work-co-location">Omaha</span>
                     </div>
                     <span class="work-co-tenure">2012 – 2016</span>
@@ -217,7 +234,7 @@
             <div class="work-edu-item">
                 <div class="work-co-header">
                     <div class="work-co-info">
-                        <h3 class="work-co-name">Tuck School of Business at Dartmouth</h3>
+                        <img src="work-images/tuck-school-of-business-at-dartmouth.png" alt="Tuck School of Business at Dartmouth" class="work-co-logo">
                     </div>
                     <span class="work-co-tenure">2016 – 2018</span>
                 </div>
@@ -234,7 +251,7 @@
             <div class="work-edu-item">
                 <div class="work-co-header">
                     <div class="work-co-info">
-                        <h3 class="work-co-name">Creighton University</h3>
+                        <img src="work-images/creighton-university-logo.png" alt="Creighton University" class="work-co-logo">
                     </div>
                     <span class="work-co-tenure">2008 – 2012</span>
                 </div>
