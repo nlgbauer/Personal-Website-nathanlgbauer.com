@@ -352,6 +352,21 @@ img { max-width: 100%; display: block; }
 
 .intro-block {}
 
+.intro-single {
+    max-width: 100%;
+}
+
+.intro-single p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-body);
+    margin-bottom: 24px;
+}
+
+.intro-single p:last-child {
+    margin-bottom: 0;
+}
+
 .intro-block-label {
     display: block;
     font-size: 10px;
