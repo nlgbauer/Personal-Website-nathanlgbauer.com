@@ -422,11 +422,28 @@ img { max-width: 100%; display: block; }
     border-color: var(--accent);
 }
 
-.press-logos {
+.ticker-wrap {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.ticker-track {
     display: flex;
     align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 60px;
+    width: max-content;
+    animation: ticker-scroll 25s linear infinite;
+}
+
+.ticker-wrap:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .press-logo-item {
@@ -1035,8 +1052,8 @@ img { max-width: 100%; display: block; }
         gap: 24px;
     }
 
-    .press-logos {
-        gap: 28px;
+    .ticker-track {
+        gap: 40px;
     }
 }
 
